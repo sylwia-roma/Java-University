@@ -1,0 +1,44 @@
+Zdefiniować klasę abstrakcyjną Spiewak reprezentującą śpiewaków. Każdy śpiewak posiada nazwisko oraz numer startowy (np. w konkursie talentów), nadany automatycznie przy tworzeniu obiektu. Klasa Spiewak powinna posiadać m.in. konstruktor Spiewak(String nazwisko) oraz następujące metody:
+
+a. abstrakcyjną: abstract String spiewaj(), która docelowo zwraca tekst śpiewany przez śpiewaka w konkursie.
+b. public String toString() zwracającą informację o śpiewaku.
+c. statyczną:... najglosniej(...) przyjmującą tablicęo biektów-śpiewaków oraz zwracającą obiekt-śpiewaka, w którego śpiewanym tekście znajduje się najwięcej różnych liter (np. w tekście zwróconymprzez metodę spiewaj() - "Bye bye 2020" występują 3 różne litery: B/b, y, e).
+ 
+W metodzie main klasy testującej Main:
+
+a. stworzyć kilka (co najmniej 3) obiektów-śpiewaków poprzez użycie anonimowych klas wewnętrznych rozszerzających klasę Spiewak. Użycie tych klas polega na podawaniu tego, co śpiewak ma śpiewać w konkursie.
+b. stworzyć tablicę śpiewaków składającą się z obiektów z punktu a.
+c. testować metodę najglosniej(...) z klasy Spiewak.
+
+Stworzyć klasę Spiewak w taki sposób, aby następująca metoda main z klasy Main:
+public class Main {
+    public static void main(String[] args)
+    {
+    	Spiewak s1 = new Spiewak("Dietrich"){
+          /*<-  kod */
+        };
+  
+        Spiewak s2 = new Spiewak("Piaf"){
+          /*<-  kod */
+        };
+  
+        Spiewak s3 = new Spiewak("Adele"){
+          /*<-  kod */
+        };
+  
+        Spiewak sp[] = {s1, s2, s3};
+  
+        for (Spiewak s : sp)
+            System.out.println(s);
+        
+        System.out.println("\n" + Spiewak.najglosniej(sp));
+    }
+}
+wyprowadziła prawidłową informację dokładnie jak poniżej:
+
+(1) Dietrich: oooooooooooo
+(2) Piaf: a4iBBiii
+(3) Adele: aAa
+
+(2) Piaf: a4iBBiii
+Uwaga: Kod klasy Main może (i musi) byćzmieniony tylko w miejscach zaznaczonych na zielono. Inne modyfikacje tego kodu nie są dopuszczalne.

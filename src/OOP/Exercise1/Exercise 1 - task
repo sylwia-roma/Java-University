@@ -1,0 +1,40 @@
+Zdefiniować klasę abstrakcyjną Muzyk razem z klasami ją dziedziczącymi. Każdy muzyk posiada imię oraz czas wystąpienia. Instrument (na którym gra muzyk) oraz stawka godzinowa są określone za pomocą odpowiednich metod (abstrakcyjnych). Klasa Muzyk posiada standardowy konstruktor oraz tzw. gettery. Klasy dziedziczące po Muzyk (związane z konkretnymi instrumentami) implementują w/w abstrakcyjne metody.  Napisać wszystkie klasy w taki sposób, aby następujacy program:
+
+public class Test {
+
+    public static void main(String[] args) {
+   
+        Muzyk[] muzycy = {new Skrzypek("Aleks", 2),    // Imie, czas wystapienia (w godz.)
+                                         new Wiolonczelista("Bartek", 1),
+                                         new Flecista("Czarek", 0.5)};
+        for (Muzyk m : muzycy)
+            System.out.println("Muzyk: " + m.imie() + '\n' +
+                                         "Instrument: " + m.instrument() + '\n' +
+                                         "Czas wystąpienia: " + m.czas() + " godz. " + '\n' +
+                                         "Stawka godzinowa: " + m.stawka() + '\n');
+   
+        System.out.println(Muzyk.maxHonorarium(muzycy));    // muzyk otrzymujący najwyższe honorarium za występ
+     
+    }
+}
+
+wyprowadził na konsolę poniższe wyniki:
+
+Muzyk: Aleks
+Instrument: skrzypce
+Czas wystąpienia: 2.0 godz.
+Stawka godzinowa: 200.0
+
+Muzyk: Bartek
+Instrument: wiolonczela
+Czas wystąpienia: 1.0 godz.
+Stawka godzinowa: 250.0
+
+Muzyk: Czarek
+Instrument: flet
+Czas wystąpienia: 0.5 godz.
+Stawka godzinowa: 300.0
+
+Aleks, czas = 2.0 godz., stawka = 200.0
+
+Uwaga: Metody instrument() i stawka() muszą być wywoływane polimorficznie.

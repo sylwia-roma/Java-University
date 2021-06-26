@@ -1,0 +1,35 @@
+(Rozbudować zadanie 3)
+a. (1p) Zdefiniować interfejs Obliczenie zawierający metody zwracające pole i obwód figury. Zaimplementować interfejs Obliczenie w klasach Figura, Kolo, Prostokat oraz testować wszystkie metody.
+
+b. (2p) Zdefiniować interfejs Rysowanie zawierający metodę void rysuj() rysującą figurę na konsoli. Stworzyć klasę Prostokat2 rozszerzającą klasę Prostokat oraz implementującą interfejs Rysowanie w taki sposób, aby następujący fragment kodu
+
+Figura p2 = new Prostokat2(20, 20, 10, 5, '*');       // prostokąt rozmiaru 10 x 5 będzie "rysowany" na konsoli za pomocą znaku '*'
+((Prostokat2)p2).rysuj();                                          // Wyjaśnić dlaczego p2.rysuj() nie działa?
+     
+wyprowadził na konsolę poniższe wyniki:
+
+**********
+**********
+**********
+**********
+**********
+
+c. (1p) Zdefiniować interfejs Transformacja zawierający metody void przesunDo(int x, int y) oraz void powrot(). Stworzyć klasę Kolo2 rozszerzającą klasę Kolo oraz implementującą interfejs Transformacja w taki sposób, aby następujący fragment kodu
+
+Kolo2 k2 = new Kolo2(15, 20, 5);
+       
+k2.przesunDo(50, 40);    // przesunięcie środka koła do punktu (50, 40)
+System.out.println(k2);
+       
+k2.powrot();                    // powrót do poprzedniej pozycji (bezpośrednio przed przesunięciem) środka koła
+System.out.println(k2);
+
+wyprowadził na konsolę poniższe wyniki:
+
+Koło
+Środek - (50,40)
+Promień - 5
+
+Koło
+Środek - (15,20)
+Promień - 5

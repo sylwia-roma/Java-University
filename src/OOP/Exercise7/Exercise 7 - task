@@ -1,0 +1,11 @@
+Zmodyfikować klasę Spiewak (z zadania 3) poprzez m. in. implementację interfejsu java.lang.Comparable<Spiewak>, czyniąc obiekty-śpiewaków porównywalnymi według następujących kryteriów uporządkowania: wśród śpiewaków porównujemy najpierw poziom głośności (bedący liczbą różnych liter w tekście), potem alfabetycznie nazwiska (tj. w przypadku tego samego poziomu głośności dwóch śpiewaków), a na końcu porównujemy ich unikalne numery (nadane automatycznie przy tworzeniu).
+
+Testując zadanie należy skorzystać z klas kolekcyjnych z java.util: stworzyć kilka obiektów-śpiewaków poprzez użycie anonimowych klas wewnętrznych rozszerzających klasę Spiewak (użycie tych klas polega na podawaniu tego, co śpiewak ma śpiewać), stworzyć kolekcję (np. typu ArrayList<...>) utworzonych śpiewaków, posortować kolekcję według zdefiniowanego porządku, wyświetlić na konsolę wszystkich śpiewaków z kolekcji.
+
+Poniżej podano przykład poprawnego wydruku listy spiewaków po sortowaniu:
+
+(3) Houston: a4iBBiii
+(4) Carrey: oaooooooooooo
+(1) Darrey: eeae
+(2) Darrey: bebe
+(5) Madonna: aAa

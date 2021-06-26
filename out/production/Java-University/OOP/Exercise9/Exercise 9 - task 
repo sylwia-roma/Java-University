@@ -1,0 +1,49 @@
+Napisać program symulujący grę w losowanie liczb między dwoma graczami. Każdy gracz posiada identyfikator. Jeden ruch każdego gracza polega na wylosowaniu jednej liczby całkowitej z przedziału [1, 100]. Między kolejnymi ruchami gracza należy zastosować opóźnienia czasowe (również losowe). Arbiter daje sygnał rozpoczęcia gry i mierzy czas. Po upływie określonego czasu, arbiter sumuje liczby wylosowane przez graczy oraz ogłasza zwycięzcę - gracza z większą sumą, lub remis w przypadku równych sum.
+
+Gracze są obiektami klasy Player (wątek). Arbiter jest obiektem klasy Referee (wątek), przy tworzeniu obiektu określony jest czas gry.
+
+Stworzyć w/w klasy w taki sposób, aby następujący program:
+
+public class TestGame {
+       
+    public static void main(String[] args)
+    {
+        Player p1 = new Player("ppj");                                            // tworzenie gracza ze swoim identyfikatorem                  
+        Player p2 = new Player("gui");                           
+
+        Referee ref = new Referee(10, new Player[]{p1,p2});       //  arbiter ustala czas gry (w sekundach), "rejestruje" tablicę graczy
+                                                               
+        ref.startGame();                                                                   // arbiter startuje swój wątek: mierzy czas oraz daje sygnał startu graczom
+       
+        try {          
+            ref.join();                                                                          // czekamy, aż wątek arbitra zakończy swoją pracę, tzn. po upływie określonego czasu przerywa pracę wątków wszystkich graczy   
+
+                                                                                                     // join() jest metodą z klasy Thread                       
+
+        } catch (InterruptedException exc){
+
+                exc.printStackTrace();
+
+        }             
+
+        ref.result();                                                                            // arbiter ogłasza wynik gry
+
+    }
+}
+wyprowadził na konsolę wyniki podobne do tych poniżej:
+
+Czas 1
+ppj: 85
+gui: 41
+Czas 2
+gui: 57
+ppj: 91
+...
+Czas 10
+ppj: 72
+gui: 64
+
+wyniki ppj: 445
+wyniki gui: 623
+
+gui wygrał!

@@ -1,0 +1,23 @@
+ZADANIE 12 (6p)
+(Synchronizacja i koordynacja wątków)
+Zrealizować klasyczny problem współbieżności Producent - Konsument za pomocą schematu wait/notify.
+
+Producent produkuje produkty i umieszcza je w buforze, a konsument pobiera je stamtąd w kolejności ich umieszczania.
+
+Szczegóły:
+
+Produkty są liczbami całkowitymi wygenerowanymi (wyprodukowanymi) losowo przez producenta.
+
+Bufor jest obiektem klasy Buffer zawierającej między innymi metody int get() - pobierającą liczbę z bufora i put(int n) - wstawiającą liczbę do bufora. Elementy bufora są przechowywane w tablicy o ograniczonej pojemności podaną w momencie jego utworzenia (w szczególności, bufor może mieć pojemność większą niż 1). W danej chwili dostęp do bufora może mieć albo producent, albo konsument. 
+
+Producent jest obiektem klasy Producer (np. implementującej Runnable). Konstruktor Producer(Buffer b) tworzy nowy obiekt - producent, którego zadaniem jest produkowanie i umieszczanie produktu w buforze b. Przedefiniowana metoda run() zawiera nieskońzoną pętlę: 1. Generuje losowo jedną liczbę całkowitą; 2. Umieszcza ją w buforze za pomocą metody put(int) lub czeka na zwolnienie miejsca w przypadku pełngo bufora; 3. Zasypia na losowy wybrany czas z przedziału od 0 do 2s. 
+
+Konsument jest obiektem klasy Consumer (np. implementującej Runnable). Konstruktor Consumer(Buffer b) tworzy nowy obiekt - konsument, którego zadaniem jest pobieranie produktu z bufora b i jego konsumowanie. Przedefiniowana metoda run() zawiera nieskończoną pętlę: 1. Pobiera jedną liczbę z bufora za pomocą metody int get() lub czeka na nową liczbę w przypadku pustego bufora; 2. Konsumuje liczbę, czyli wyprowadza ją na konsolę; 3. Zasypia na losowy wybrany czas z przedziału od 0 do 2s.
+
+Testowanie:
+
+1. Utworzyć obiekt klasy Buffer
+2. Utworzyć obiekty klas Producer, Consumer oraz uruchomić wątki symulujące działanie producenta oraz konsumenta na danym buforze.
+3. Program zakończy działanie po określonym czasie 15s.
+
+W trakcie działania, program powinien wyprowadzać na zewnątrz jak najwięcej informacji, aby można było śledzić jego przebieg.

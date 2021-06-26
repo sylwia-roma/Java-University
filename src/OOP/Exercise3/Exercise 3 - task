@@ -1,0 +1,41 @@
+Przygotować klasę abstrakcyjną Figura oraz dziedziczące ją klasy Kolo, Prostokat.
+
+Klasa abstrakcyjna Figura zawiera min. dwa pola typu int określające współrzędnych położenia figury; konstruktor; metodę abstrakcyjną zwracającą nazwę figury; metodę abstrakcyjną void pozycja(..., ...) wyświetlającą na konsolę informację, czy punkt o współrzędnych (typu int, przekazanych do metody jako argumenty) znajduje się wewnątrz figury oraz przedefiniowaną metodę public String toString() zwracającą informację o figurze.
+
+Klasa Kolo zawiera dodatkowe pole typu int określające promień; konstruktor; implementację metody abstrakcyjnej oraz przedefiniowaną metodę toString().
+
+Klasa Prostokat zawiera dodatkowe pola typu int określające szerokość, wysokość prostokąta; konstruktor tworzący prostokąt o bokach równoległych do osi układu współrzędnych; implementację metody abstrakcyjnej oraz przedefiniowaną metodę toString().               
+
+
+Stworzyć w/w klasy w taki sposób, aby następujący program
+
+public class TestFigur {
+   
+    public static void main(String[] args)
+    {       
+        Figura fig[] = new Figura[2];
+        fig[0] = new Kolo(10, 10, 5);                    // położenie koła = srodek = (10,10), promień = 5
+        fig[1] = new Prostokat(20, 20, 15, 10);    // położenie prostokąta = lewy górny wierzchołek = (20,20), szerokość = 15, wysokość = 10
+      
+            // polimorficzne wywołanie metody toString() z klas Kolo/Prostokat,
+            // a nie z klasy Figura
+        for (Figura f : fig)              // pętla for-each
+            System.out.println(f);    // System.out.println(f.toString());
+      
+        fig[0].pozycja(12, 12);                    
+        fig[1].pozycja(25, 30);
+    }
+}
+wyprowadził na konsolę poniższe wyniki:
+
+Koło
+Środek - (10,10)
+Promień - 5
+
+Prostokąt
+Lewy górny - (20,20)
+Szerokość: 15, Wysokość: 10
+
+Punkt (12,12) znajduje się wewnątrz koła
+
+Punkt (25,30) znajduje się na zewnątrz prostokąta

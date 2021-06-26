@@ -1,0 +1,39 @@
+Zaprojektować klasę IterNap, reprezentującą łańcuchy znakowe. Klasa IterNap (implementując interfejs java.lang.Iterable) powinna umożliwiać iterowanie po znakach napisu stosując instrukcję for-each. Implementacja klasy IterNap nie może korzystać z tablic, ani z kolekcji z bibliotek Javy. Stworzyć klasę w taki sposób, aby następujący program
+
+public class IterNapTest {
+
+    public static void main(String [] args)
+    {
+        IterNap napis = new IterNap("prOgrAmoWanIe ObiEktOwe i Gui");
+
+            // iteracja po znakach napisu,
+            // domyślnie zaczynając od pierwszego znaku (o indeksie 0)
+            // i z krokiem iteracji = 1
+        for (char z: napis)
+            System.out.print(z + " ");
+   
+        System.out.println();
+
+        napis.ustawPoczatek(2);     // ustawienie początku iteracji (tu: 2-gi znak, o indeksie 2)
+        napis.ustawKrok(3);         // ustawienie kroku iteracji (tu: co 3-ci znak)
+   
+            // iteracja po znakach napisu,
+            // od ustalonego znaku, z określonym krokiem
+        for (char z: napis)
+            System.out.print(z + " ");
+
+
+	/*<-  co tu trzeba napisać w wywołaniu metody forEach z argumentem będącym lambda-wyrażeniem 
+	      w celu wyświetlenia znaków napisu (w postaci małych liter) zgodnie z iteracją
+
+	napis.forEach(...)		
+	*/
+    }
+}
+
+wyprowadził na konsolę poniższe wyniki:
+
+p r O g r A m o W a n I e   O b i E k t O w e   i   G u i
+O A W I O E O   G
+
+o a w i o e o   g

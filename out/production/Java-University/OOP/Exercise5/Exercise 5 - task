@@ -1,0 +1,34 @@
+Zmodyfikować klasę Figura (z zad. 3-4) poprzez m. in. implementację interfejsu java.lang.Comparable<Figura>, czyniąc obiekty-figury porównywalnymi według następujących kryteriów uporządkowania: wśród figur porównujemy najpierw wartości pola, potem wartości obwodu (tj. kiedy pola są równe), a na końcu porównujemy ich unikalne numery (nadane automatycznie przy tworzeniu figur).
+
+Testując zadanie należy skorzystać z klas kolekcyjnych z java.util: stworzyć kilka obiektów-figur, stworzyć kolekcję (np. typu ArrayList<...>) zawierającą utworzonych figur, posortować kolekcję według zdefiniowanego porządku, wyświetlić na konsolę wszystkich figur z kolekcji.
+
+Poniżej podano przykład poprawnego wydruku listy figur przed i po sortowaniu:
+
+
+Figury przed sortowaniem:
+
+Prostokąt
+Lewy górny - (1,1)
+Szerokość: 4, Wysokość: 9
+
+Koło
+Środek - (1,1)
+Promień - 5
+
+Prostokąt
+Lewy górny - (2,2)
+Szerokość: 6, Wysokość: 6
+
+Figury po sortowaniu:    
+
+Prostokąt
+Lewy górny - (2,2)
+Szerokość: 6, Wysokość: 6
+
+Prostokąt
+Lewy górny - (1,1)
+Szerokość: 4, Wysokość: 9
+
+Koło
+Środek - (1,1)
+Promień - 5

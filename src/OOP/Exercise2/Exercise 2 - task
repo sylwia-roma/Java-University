@@ -1,0 +1,9 @@
+Zdefiniować interfejsy Flyable, Speakable i zaimplementować je w klasach Bird, Plane, UFO, Virus.
+
+Interfejs Flyable posiada dwie metody: public String drive(), public double distance() zwracające typ/nazwę napędu oraz maksymalną odległość jaką może pokonać obiekt latający.
+
+Interfejs Speakable posiada metodę public String speak() zwracający odgłos wydany przez obiekt.
+
+Zdefiniować kilka obiektów w/w klas i umieścić je w dwóch tablicach typów Flyable, Speakable. Napisać 2 metody statyczne przyjmujące w/w tablice oraz zwracające odpowiednio: obiekt pokonujący najkrótszą odległość, obiekt najgłośniejszy (głosność = liczba znaków w odgłosie).
+
+Pokazać działanie wszystkich interfejsów, klas, metod.
